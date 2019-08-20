@@ -29,9 +29,11 @@ public class SearchController {
         if (searchType.equals("all")) {
             model.addAttribute("jobs", JobData.findByValue(searchTerm));
             model.addAttribute("columns", ListController.columnChoices);
+            //model.addAttribute("count", JobData.findByValue(searchTerm).size());
         } else
             {
             model.addAttribute("jobs", JobData.findByColumnAndValue(searchType, searchTerm));
+            //model.addAttribute("count", JobData.findByColumnAndValue(searchType, searchTerm).size());
             model.addAttribute("columns", ListController.columnChoices);
         }
 
